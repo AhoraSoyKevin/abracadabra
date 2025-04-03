@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Unica+One&family=Yusei+Magic&display=swap"
+        rel="stylesheet">
+    <title>Creat Account</title>
+</head>
+
+<body>
+    <header id="header-home">
+        <img src="/asscets/ABRACADABRA.png" alt="">
+        <span>Haz que la magia suceda.</span>
+    </header>
+    <br>
+    <main>
+        <section id="login-box">
+            <h2>Crear Cuenta</h2>
+            <label>Nombre de usuario</label>
+            <input type="text" id="username" placeholder="Asigne su usuario" />
+            <label>Nombre</label>
+            <input type="text" id="name" placeholder="Ingrese su nombre" />
+            <label>Email</label>
+            <input type="text" id="email" placeholder="Ingrese su email" />
+            <label>Contraseña</label>
+            <input type="password" id="password" placeholder="Ingrese contraseña" />
+            <label>Confirmar contraseña</label>
+            <input type="password" id="retype-password" placeholder="Ingrese contraseña" />
+            <div class="button-container">
+                <a href="index.html" class="button-like">Regresar</a>
+                <a  class="button-like" onclick="signUp()">Ingresar</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="">Información</a>
+        <a href="">Descarga la app ABRACADABRA</a>
+        <a href="">Centro de Ayuda</a>
+        <a href="">Condiciones de Servicio</a>
+        <a href="">Política de Privacidad</a>
+        <a href="">Política de cookies</a>
+        <a href="">Accesibilidad</a>
+        <a href="">Información de anuncios</a>
+        <a href="">Blog</a>
+        <a href="">Empleos</a>
+        <a href="">Recursos para marcas</a>
+        <a href="">Publicidad</a>
+        <a href="">Marketing</a>
+        <a href="">ABRACADABRA para empresas</a>
+        <a href="">Desarrolladores</a>
+        <a href="">Guía</a>
+        <a href="">Configuración</a>
+        <a href="">© 2025 ABRACADABRA Corp</a>
+    </footer>
+
+    <script>
+        function signUp() {
+            const username = document.getElementById('username').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const retypePassword = document.getElementById('retype-password').value;
+
+            if (!username || !name || !email || !password || !retypePassword) {
+                alert('Todos los campos son obligatorios.');
+                return;
+            }
+
+            if (password !== retypePassword) {
+                alert('Las contraseñas no coinciden.');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('La contraseña debe tener al menos 6 caracteres.');
+                return;
+            }
+
+            if (localStorage.getItem(username)) {
+                alert('El nombre de usuario ya está en uso.');
+                return;
+            }
+
+            const userData = {
+                name: name,
+                email: email,
+                password: password
+            };
+            localStorage.setItem(username, JSON.stringify(userData));
+
+            alert('Registro exitoso.');
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+
+</html>

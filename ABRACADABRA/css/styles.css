@@ -1,0 +1,177 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Yusei Magic", sans-serif;
+    font-weight: 400;
+    font-style: normal;    
+    text-decoration: none;  
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--color-font);
+
+}
+
+:root {
+    --main-bg-color: #011F26;
+    --color-segundary: #A3D3D9;
+    --color-font: aliceblue;
+}
+
+header {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+
+header>img {
+    width: 500px;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--color-font);
+  }
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.button-like {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    color: var(--main-bg-color);
+    background-color: var(--color-font);
+    border: 1px solid var(--color-font);
+    border-radius: 35px;
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+    text-decoration: none;
+    min-width: auto; 
+    width: auto;    
+}
+
+.button-like:hover {
+    background-color: var(--color-segundary);
+    color: var(--main-bg-color);
+}
+
+#singIn-box a {
+    width: auto;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#login-box, #singIn-box {
+    text-decoration: none;
+    background-color: var(--main-bg-color);
+    padding: 20px 40px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+#login-box{
+    background-color: var(--main-bg-color);
+    padding: 20px 40px;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+    border-radius: 35px;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: var(--color-segundary);
+    outline: none;
+}
+
+#main-home {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+main>button {
+    margin: 3px;
+    width: 300px;
+    color: var(--main-bg-color);
+    background-color: var(--color-font);
+    border: 1px solid var(--color-font);
+    border-radius: 35px;
+    height: 40px;
+    font-size: 14px;
+    color: black;
+}
+
+#b-Creat-Account {
+    background-color: var(--color-segundary);
+
+}
+
+#b-Creat-Account:hover{
+    background-color: var(--main-bg-color);
+    color: var(--color-font);
+}
+
+
+main>span:first-of-type {
+    width: 300px;
+    font-size: 12.5px;
+}
+
+#question-SingIn {
+    margin-top: 10px;
+}
+
+#b-SingIn {
+    background-color: var(--main-bg-color);
+    color: var(--color-font);
+}
+
+footer{
+   margin-top: 80px;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   justify-content:center;
+   position: relative;
+   box-sizing: border-box;
+   z-index: 0;
+}
+
+footer > a{
+    align-items: stretch;
+    font-size: 13px;
+    color: var(--color-font);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+}
+
+

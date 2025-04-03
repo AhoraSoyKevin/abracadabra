@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Unica+One&family=Yusei+Magic&display=swap"
+        rel="stylesheet">
+    <title>SingIn</title>
+</head>
+
+<body>
+    <header id="header-home">
+        <img src="/asscets/ABRACADABRA.png" alt="">
+        <span>Haz que la magia suceda.</span>
+    </header>
+    <main>
+        <section id="singIn-box">
+            <h2>Iniciar Sesión</h2>
+            <label>Usario</label>
+            <input type="text" id="username" placeholder="Ingrese su usuario, correo o celular" />
+            <label>Contraseña</label>
+            <input type="password" id="password" placeholder="Ingrese contraseña" />
+            <div class="button-container">  
+                <a href="index.html" class="button-like">Regresar</a>
+                <a href="home.html" class="button-like" onclick="signIn()">Ingresar</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="">Información</a>
+        <a href="">Descarga la app ABRACADABRA</a>
+        <a href="">Centro de Ayuda</a>
+        <a href="">Condiciones de Servicio</a>
+        <a href="">Política de Privacidad</a>
+        <a href="">Política de cookies</a>
+        <a href="">Accesibilidad</a>
+        <a href="">Información de anuncios</a>
+        <a href="">Blog</a>
+        <a href="">Empleos</a>
+        <a href="">Recursos para marcas</a>
+        <a href="">Publicidad</a>
+        <a href="">Marketing</a>
+        <a href="">ABRACADABRA para empresas</a>
+        <a href="">Desarrolladores</a>
+        <a href="">Guía</a>
+        <a href="">Configuración</a>
+        <a href="">© 2025 ABRACADABRA Corp</a>
+    </footer>
+
+<script>
+        function signIn() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('Por favor, ingrese usuario y contraseña.');
+                return;
+            }
+
+            const storedUserData = localStorage.getItem(username);
+            if (storedUserData) {
+                const userData = JSON.parse(storedUserData);
+                if (userData.password === password) {
+                    sessionStorage.setItem('loggedInUser', username);
+                    window.location.href = 'home.html';
+                } else {
+                    alert('Contraseña incorrecta.');
+                }
+            } else {
+                alert('Usuario no encontrado.');
+            }
+        }
+    </script>
+</body>
+
+</html>
